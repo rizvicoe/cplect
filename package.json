@@ -41,5 +41,8 @@
     "node-sass": "^4.13.1",
     "socket.io": "^2.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "highlightjs-line-numbers.js": "^2.7.0"
+  }
 }
