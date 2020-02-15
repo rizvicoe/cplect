@@ -26,11 +26,20 @@
 		<div class="reveal">
 			<div class="slides">
 				
+				
 				<section>
 					<h2>Operator Precedence & Associativity</h2>
 					<h5 style="color: blueviolet;">Prof. Shiburaj Pappu</h5>
 					<p>
 						<small>PPT : <a href="operators.html">Click Here</a></small>
+					</p>
+				</section>
+				<section >
+					<h2>Bitwise Operators</h2>
+					<h5>$ & |  ^ << >> ~ $</h5>
+					<h5 style="color: blueviolet;">Prof. Shiburaj Pappu</h5>
+					<p>
+						<small>PPT : <a href="bitwise-operators.html">Click Here</a></small>
 					</p>
 				</section>
 				
@@ -45,11 +54,18 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				hash: true,
+				math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
