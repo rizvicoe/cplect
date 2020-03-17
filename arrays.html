@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Arrays - Prof. Shiburaj</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section >
+                    <h1>Arrays</h1>
+                    <img src="assets/images/c-arrays.jpg" alt="">
+                    
+				</section>
+				<section >
+                    <h3>What are Arrays?</h3>
+                    <p style="color: purple;">An array is a fixed size sequenced collection of elements of the <b>same</b> data type.</p>
+                    <p>Examples:</p>
+                    <ul>
+                        <li>List of Temperatures</li>
+                        <li>List of employees salary</li>
+                        <li>List of cost of products</li>
+                        <li>Test scores of students</li>
+                        <li>etc.</li>
+                    </ul>
+                </section>
+                <section >
+                    <h3>Types of Arrays</h3>
+                    <ul>
+                        <li>One Dimensional Array</li>
+                        <li>Two Dimensional Array</li>
+                        <li>Multi Dimensional Array</li>
+                    </ul>
+                    
+                    
+                </section>
+                <section>
+                    <h3>One Dimensional Arrays</h3>
+                    <h4>Declaration</h4>
+                    <p style="color: red;">type  array-name[size]; </p><br><br>                        
+                    <pre>
+                        <code class="c" data-line-numbers>int status[10]; 
+char message[15];
+float marks[15];</code>
+                    </pre>                        
+                </section>
+                <section>
+                    <p style="color: red;">Note:</p>
+                    <ul>
+                        <li>Arrays must be declared before they can be used so that compiler can allocate space for them in memory.</li>
+                        <li>The size of the array tell how many element can be stored in that array.</li>
+                        <li>Saving data morethan the size of the array will result in unexpected results.</li>
+                        <li>Strings are stored as array of charachters.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>One Dimensional Arrays</h3>
+                    <h4>Initialization</h4>
+                    <p style="color: red;">type  array-name[size] = { list of values }; </p>
+                    <hr>
+                    <blockquote>Initialization can be done at <b>compile time</b> or at <b>run time</b></blockquote>    
+                    <p><small>If the array is not initialized then it will have garbage values.</small></p>                  
+                    <pre>
+                        <code class="c" data-line-numbers>int status[3] = { 1, 2, 3 }; 
+char message[5] = {'a','e','i','o','u'};
+float marks[4] = { 4.5, 5.6, 7.1, 3.3 };</code>
+                    </pre>
+                </section>
+                <section>
+                    <p style="color: red;">Note:</p>
+                    <p>Size can be ommited. It will be computed from the number of elements in the initialization.</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int status[] = { 1, 2, 3 };                 // size is 3
+char message[] = {'a','e','i','o','u'};     // size is 5
+float marks[] = { 4.5, 5.6, 7.1, 3.3 };     // size is 4</code>
+                    </pre>   
+                </section>
+                <section>
+                    <p style="color: red;">Note:</p>
+                    <h4 style="color: royalblue;">Partial Initialization</h4>
+                    <p>Compile time initialization can be partial. That is the number of initializers 
+                        can be less than the declared size. In such cases the remaining elements are 
+                        initialized with zero for numeric type and to NULL ($ \0 $) for char type</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int status[3] = { 1 };                 // 1 , 0 , 0
+char message[5] = {'a','e' };           // 'a','e','\0','\0','\0'
+float marks[4] = { 4.5, 5.6, 7.1 };     // 4.5 , 5.6 , 7.1 , 0</code>
+                    </pre>   
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #1</h4>
+                    <p>Write a program to record the hourly temperatures using arrays and find the mean temperature.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #2</h4>
+                    <p>Write a program to compute the sum of elements of two one dimensional arrays and store it in a new one dimensional array.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Home Work</h4>
+                    <p>An election is contested by five candidates. The candidates are numbered 1 to 5 
+                        and the voting is done by marking the candidate number in ballot paper. WAP to 
+                        read the ballot paper and count the votes. The program should declare the winner 
+                        of maximum votes. If the number is outside the range then it should take it as 
+                        spoilt ballot and also count the number of such spoilt ballot.</p>
+                </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+				math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
