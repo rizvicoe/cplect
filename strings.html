@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Strings - Prof. Shiburaj</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section >
+                    <h1>Strings</h1>
+                    <img src="assets/images/strings.png" alt="">
+                    
+				</section>
+				<section >
+                    <h3>What are String?</h3>
+                    <p style="color: purple;">A string is a sequence of charachters that is treated as a single data item.</p>
+                    <p>Examples:</p>
+                    <pre>
+                        <code class="c" data-line-numbers>"Hello World" 
+"Enter the Number:"
+"Sum = 12"</code>
+                    </pre> 
+                </section>
+                <section>
+                    <h3>Strings</h3>
+                    <h4>Declaration</h4>
+                    <p style="color: red;">char  string_name[size]; </p><br><br>                        
+                    <pre>
+                        <code class="c" data-line-numbers>char city[10]; 
+char message[15];</code>
+                    </pre>                        
+                </section>
+                <section>
+                    <h3>String</h3>
+                    <h4>Initialization</h4>
+                    <p style="color: red;">type  array-name[size] = { list of values }; </p>
+                    <hr>                
+                    <pre>
+                        <code class="c" data-line-numbers>char city[7] = "Mumbai"; 
+char city[7] = {'M','u','m','b','a','i','\0'};</code>
+                    </pre>
+                </section>
+                <section>
+                    <p style="color: red;">Note:</p>
+                    <p>Size can be ommited. It will be computed from the number of elements in the initialization + 1 for NULL ($\0$) charachter.</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int message[] = "Hello";                 // size is 6
+char message[] = {'a','e','i','o','\0'};     // size is 5</code>
+                    </pre>   
+                    <small style="color: darkred;">Null charachter $\0$ tells the compiler that the string has ended. The last element of the string should always be a NULL.</small>
+                </section>
+                <section>
+                    <p style="color: red;">Note:</p>
+                    <h4 style="color: royalblue;">Partial Initialization</h4>
+                    <p>Compile time initialization can be partial. That is the number of initializers 
+                        can be less than the declared size. In such cases the remaining elements are 
+                        initialized with NULL ($ \0 $) in a string.</p>
+                    <pre>
+                        <code class="c" data-line-numbers>char message[5] = {'a','e' };           // 'a','e','\0','\0','\0'
+char city[8] = "Delhi";     // 'D','e','l','h','i','\0','\0','\0'</code>
+                    </pre>   
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Reading Strings from Terminal</h4>
+                    <h5 style="text-align: left;">1. Using : $scanf()$</h5>
+                    <p><span style="color: darkred;">$ \%s $</span> and <span style="color: darkred;">$ \%[ ] $</span> format specifiers is used to read data from terminal using scanf</p>
+                    <pre>
+                        <code class="c" data-line-numbers>char country[20];
+scanf("%s",country);                            
+scanf("%[^\n]",country);</code>
+                    </pre> 
+                    <small>Note: <span style="color: darkred;">$ \%s $</span> will read a word only. It stops reading when user enters space.</small> 
+                    <small style="color: green;">In scanf when using charachter arrays as second parameter, <b>&amp;</b> is not required.</small>  
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Reading Strings from Terminal</h4>
+                    <h5 style="text-align: left;">2. Using : $gets()$</h5>
+                    <pre>
+                        <code class="c" data-line-numbers>char country[20];
+gets(country);</code>
+                    </pre> 
+                    <small style="color: green;">gets can read sentences.</small>  
+                </section>
+                <section>
+                     
+                    <h2 style="color: rebeccapurple;">Which method is better?</h2>
+                    <h3 class="fragment">$$ scanf(); $$</h3>
+                    <h4 class="fragment">Or</h4>
+                    <h3 class="fragment">$$ gets(); $$</h3>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #1</h4>
+                    <p>WAP to get a string from user and display it on screen.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #2</h4>
+                    <p>WAP to check if there is a vovel charachter in the entered string.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #3</h4>
+                    <p>Write a program in C to find the length of a string without using library function.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #4</h4>
+                    <p>Write a program in C to print individual characters of string in reverse order without using library function.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Home Work #1</h4>
+                    <p>Write a program in C to count the total number of words in a string.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Home Work #2</h4>
+                    <p>Write a program in C to copy one string to another stringwithout using library function.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Home Work #3</h4>
+                    <p>Write a program in C to remove special characters in String and keep only Alphabets and numbers.</p>
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #5</h4>
+                    <p>Write a program in C to check if the entered string is palindrome or not.</p>
+                </section>
+                
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+				math: {
+                    mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+                    config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+                    // pass other options into `MathJax.Hub.Config()`
+                    TeX: { Macros: { RR: "{\\bf R}" } }
+                },
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

@@ -122,6 +122,105 @@ float marks[4] = { 4.5, 5.6, 7.1 };     // 4.5 , 5.6 , 7.1 , 0</code>
                         of maximum votes. If the number is outside the range then it should take it as 
                         spoilt ballot and also count the number of such spoilt ballot.</p>
                 </section>
+                <section>
+                    <h3>Two Dimensional Arrays</h3>
+                    <h4>Declaration</h4>
+                    <p style="color: red;">type  array-name[row-size][column-size]; </p><br><br>                        
+                    <pre>
+                        <code class="c" data-line-numbers>int students[5][5]; 
+char message[15][10];
+float marks[15][2];</code>
+                    </pre>                        
+                </section>
+                <section>
+                    <h3>Visualization</h3>
+                    <img src="./assets/images/two-dimensional-array_0.jpg" alt="">
+                </section>
+                <section>
+                    <h3 style="color: green;">How to Identify if its One or Two Dimensional Array?</h3>
+                </section>
+                <section>
+                    <p>Array to store the marks of  five students - One Dimensional</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int marks[5];</code>
+                    </pre> 
+                    <p>Array to store the marks of five students in five subjects- Two Dimensional</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int marks[5][5];
+// 5 students x 5 subjects     or     5 Subjects x 5 Students
+                        </code>
+                    </pre> 
+                </section>
+                <section>
+                    <p>To store votes of ten candidates - One Dimensional</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int votes[10];</code>
+                    </pre> 
+                    <p>To store votes of 10 parties in 5 states - Two Dimensional</p>
+                    <pre>
+                        <code class="c" data-line-numbers>int votes[10][5];     // 10 Parties x 5 States
+int votes[5][10];     // 5 States x 10 Parties
+                        </code>
+                    </pre> 
+                </section>
+                <section>
+                    <h3>Two Dimensional Arrays</h3>
+                    <h4>Initialization</h4>
+                    <p style="color: red;">type  array-name[row][column] = { list of values }; </p>
+                    <hr>                   
+                    <pre>
+                        <code class="c" data-line-numbers>int status[3][2] = { 1, 1, 2, 2, 3, 3 }; 
+int status[3][2] = { {1, 1}, {2, 2}, {3, 3} }; 
+int status[3][2] = { 
+                        {1, 1}, 
+                        {2, 2}, 
+                        {3, 3} 
+                    }; </code>
+                    </pre>
+                    <p><small>The array initialization is done row by row.</small><br>
+                        <small>Partial initialization is possible.</small><br>
+                        <small>The value inside the sqare brackets are called Array Subscripts. They should be integer.</small>
+                    
+                    </p>
+                </section>
+                <section>
+                    <h3>Memory Layout of Arrays</h3>
+                    <table>
+                        <tr>
+                            <td><img src="./assets/images/1d-array.png" alt=""></td>
+                            <td><img src="./assets/images/2d-array.png" alt=""></td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h3>Problem Statement #3</h3>
+                    <p>WAP to find the transpose of a 3x3 matrix.</p>
+                </section>
+                <section>
+                    <h3>Problem Statement #4</h3>
+                    <p>WAP to do matrix addition.</p>
+                </section>
+                <section>
+                    <h3>Home Work</h3>
+                    <p>WAP to do matrix multiplication.</p>
+                    <img style="border: none;" src="./assets/images/matrix-multiplication5.jpg" alt="">
+                </section>
+                <section>
+                    <h3>Problem Statement #5</h3>
+                    <p>Write a program in C to count a total number of duplicate elements in an array.</p>
+                </section>
+                <section>
+                    <h3>Problem Statement #6</h3>
+                    <p>Write a program in C to print all unique elements in an array.</p>
+                </section>
+                <section>
+                    <h3>Problem Statement #7</h3>
+                    <p>Write a program in C to find the maximum and minimum element in an array.</p>
+                </section>
+                <section>
+                    <h3>Problem Statement #8</h3>
+                    <p>Write a program in C to sort elements of array in ascending order.</p>
+                </section>
 			</div>
 		</div>
 
