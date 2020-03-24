@@ -64,7 +64,7 @@ char city[7] = {'M','u','m','b','a','i','\0'};</code>
                     <p style="color: red;">Note:</p>
                     <p>Size can be ommited. It will be computed from the number of elements in the initialization + 1 for NULL ($\0$) charachter.</p>
                     <pre>
-                        <code class="c" data-line-numbers>int message[] = "Hello";                 // size is 6
+                        <code class="c" data-line-numbers>char message[] = "Hello";                 // size is 6
 char message[] = {'a','e','i','o','\0'};     // size is 5</code>
                     </pre>   
                     <small style="color: darkred;">Null charachter $\0$ tells the compiler that the string has ended. The last element of the string should always be a NULL.</small>
@@ -140,7 +140,166 @@ gets(country);</code>
                     <h4 style="color: royalblue;">Problem Statement #5</h4>
                     <p>Write a program in C to check if the entered string is palindrome or not.</p>
                 </section>
-                
+                <section>
+                    <h3>Displaying a String</h3>                      
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>printf("%s",a);</code>
+                    </pre>  
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>puts(a);</code>
+                    </pre>                      
+                </section>
+                <section>
+                    <h3>string.h Library</h3>
+                    <h4>A set of utility functions for handling strings.</h4>                       
+                    <pre>
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;</code>
+                    </pre>                        
+                </section>
+                <section>
+                    <h3>Few of the functions in string.h</h3>
+                    <ul>
+                        <li class="fragment">strlen()</li>
+                        <li class="fragment">strcpy()</li>
+                        <li class="fragment">strcat()</li>
+                        <li class="fragment">strcmp()</li>
+                        <li class="fragment">strlwr()</li>
+                        <li class="fragment">strupr()</li>
+                        <li class="fragment">strrev()</li>
+                    </ul>                         
+                </section>
+                <section>
+                    <h3>strlen(a)</h3>
+                    <p>The strlen(a) function computes the number of bytes in the string a, not including the terminating null byte.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "Mumbai";
+printf("%d",strlen(a));     // 6
+                        </code>
+                    </pre>                   
+                </section>
+                <section>
+                    <h3>strcpy(b,a)</h3>
+                    <p>The strcpy() function copies string from a to string b by replacing the contents of b.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "Mumbai",b[20];
+strcpy(b,a);
+puts(b);
+                        </code>
+                    </pre>   
+                    <p>strcpy(destination,source);</p>                
+                </section>
+                <section>
+                    <h3>strcat(a,b)</h3>
+                    <p>The strcat() function joins two string together. It joins the contents of string b to string a along with the null charachter.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "Hello ",b[20]="World";
+strcat(a,b);
+puts(a);
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>strcmp(a,b)</h3>
+                    <p>The strcat() function checks if both the strings are equal.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "Hello",b[20]="Hello";
+if(strcmp(a,b)==0){
+    printf("Same");
+}else{
+    printf("Different");
+}
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>strlwr(a)</h3>
+                    <p>strlwr( ) function converts a given string into lowercase. </p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "HEllo";
+strlwr(a);    // hello  
+puts(a);
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>strupr(a)</h3>
+                    <p>strupr( )  function converts a given string into uppercase. </p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "HEllo";
+strupr(a);    // HELLO  
+puts(a);
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>strrev(a)</h3>
+                    <p>strrev( ) function reverses a given string in C language </p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+char a[20] = "hello";
+strrev(a);    // olleh  
+puts(a);
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>stdlib.h Library</h3>
+                    <h4>Few other important library function that may be helpful while programming</h4>                       
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;stdlib.h&gt;</code>
+                    </pre>                        
+                </section>
+                <section>
+                    <h3>atoi(a)</h3>
+                    <p>This function returns the converted integral number as an int value. If no valid conversion could be performed, it returns zero.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+int val;
+char a[20] = "1900";
+val = atoi(a);      
+printf("%d",val);   // 1900
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h3>atof(a)</h3>
+                    <p>This function returns the converted integral number as an int value. If no valid conversion could be performed, it returns zero.</p>
+                    <pre  class="fragment">
+                        <code class="c" data-line-numbers>#include &lt;string.h&gt;
+float val;
+char a[20] = "19.3";
+val = atof(a);      
+printf("%f",val);   // 19.3
+                        </code>
+                    </pre>                  
+                </section>
+                <section>
+                    <h4 style="color: royalblue;">Problem Statement #6</h4>
+                    <p>Write a program in C to reverse a string.</p>
+                </section>
+                <section>
+                    <h3>Table of Strings</h3>
+                    <p>To create a list of strings. Multiple strings in one variable.</p>
+                    <pre class="fragment">
+                        <code class="c" data-line-numbers>char names[5][20] = {
+    "Amit",
+    "Arun",
+    "Junaid",
+    "Shibu"                            
+};     
+printf("%s",names[0]);   // Amit
+printf("%s",names[2]);   // Junaid
+                        </code>
+                    </pre>     
+                </section>
+                <section data-background="./assets/images/thank-you-3.jpg">
+                </section>
 			</div>
 		</div>
 
